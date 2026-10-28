@@ -2,8 +2,8 @@
 
 > `wrapup` — cleans temporary project junk files, saves a timestamped `.tar.gz` backup snapshot of your current workspace, and resets your terminal screen in one command.
 
-**Team:** Ankit Kulkarni, [Teammate Name]
-**Repository:** https://github.com/<YOUR-GITHUB-USERNAME>/wrapup-tool
+**Team:** Ankit Kulkarni, Sakshi Patil
+**Repository:** https://github.com/meankitkulkarni/wrapup-tool
 **Date:** 28-10-2026
 
 ---
@@ -234,7 +234,7 @@ Error: Unknown flag '--nonsense'. Run 'wrapup --help' for usage.
 ### Installation
 
 ```bash
-git clone [https://github.com/](https://github.com/)<YOUR-GITHUB-USERNAME>/wrapup-tool.git
+git clone [https://github.com/](https://github.com/)meankitkulkarni/wrapup-tool.git
 cd wrapup-tool
 ./install.sh
 export PATH="$HOME/.local/bin:$PATH"
