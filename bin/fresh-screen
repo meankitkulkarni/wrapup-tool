@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+DRY_RUN="${1:-false}"
+
+if [ "$DRY_RUN" = "true" ]; then
+    echo "[DRY-RUN] fresh-screen: Would clear terminal and show status summary."
+else
+    clear
+    echo "=========================================="
+    echo " Workspace Cleaned & Saved! ($(date +'%H:%M:%S'))"
+    echo " Current Dir : $(pwd)"
+    echo " Free Space  : $(df -h . | awk 'NR==2 {print $4}')"
+    echo "=========================================="
+fi
+exit 0

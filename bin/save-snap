@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+TARGET_DIR="${1:-.}"
+DRY_RUN="${2:-false}"
+BACKUP_DIR="$HOME/work_backups"
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+ABS_PATH=$(cd "$TARGET_DIR" && pwd)
+FOLDER_NAME=$(basename "$ABS_PATH")
+ARCHIVE_NAME="${FOLDER_NAME}_${TIMESTAMP}.tar.gz"
+
+mkdir -p "$BACKUP_DIR" || exit 2
+
+if [ "$DRY_RUN" = "true" ]; then
+    echo "[DRY-RUN] save-snap: Would save archive to $BACKUP_DIR/$ARCHIVE_NAME"
+else
+    tar -czf "$BACKUP_DIR/$ARCHIVE_NAME" -C "$TARGET_DIR" . 2>/dev/null || exit 2
+    echo "✔ Saved work snapshot: $BACKUP_DIR/$ARCHIVE_NAME"
+fi
+exit 0
